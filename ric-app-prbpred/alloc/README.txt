@@ -4,7 +4,7 @@ Usage of all the programs and files have been mentioned below for the reference.
 main.py:
 * Initiates xapp api, sends subscription request to Subscription Mgr
 * Upon timer event expiry of every 1 minute triggers PRB_PRED_REQ towards prbpred xApp
-* once PRB_PRED_RESP is received, it allocates PRB based on the predicted PRB utilisation and sends policy update to RAN
+* once PRB_PRED_RSP is received, it allocates PRB based on the predicted PRB utilisation and sends policy update to RAN
 
 Note: Need to implement the code for sending policy update to RAN
 
