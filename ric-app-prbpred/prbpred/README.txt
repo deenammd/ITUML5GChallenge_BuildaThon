@@ -1,11 +1,11 @@
 Usage of all the programs and files have been mentioned below for the reference.
 
 main.py:
-* Initiates xapp api, sends subscription request to Subscription Mgr
-* Upon timer event expiry of every 1 minute triggers PRB_PRED_REQ towards prbpred xApp
-* once PRB_PRED_RESP is received, it allocates PRB based on the predicted PRB utilisation and sends policy update to RAN
-
-Note: Need to implement the code for sending policy update to RAN
+* Initiates A1 policy query towards A1-mediator
+* Based on the policy details received from A1-mediator, initiates download of model from model store
+* Receives PRB_PRED_REQ from alloc xApp, performs predictions and sends PRB_PRED_RESP to alloc xApp
+Note: Currently A1 mediator doesn't send CREATE/UPDATE request when the policy instance is created. 
+Code flow to be modified when this is supported to directly send prediction input to alloc xApp or get rid of alloc xApp and send PRB allocation to E2
 
 
 How to build prbpred xApp
