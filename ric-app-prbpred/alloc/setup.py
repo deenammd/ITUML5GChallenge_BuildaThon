@@ -13,8 +13,8 @@ setup(
     name="alloc",
     version="0.0.2",
     packages=find_packages(exclude=["tests.*", "tests"]),
-    description="Anomaly Detection xApp that integrates with Traffic Steering",
-    url="https://gerrit.o-ran-sc.org/r/admin/repos/ric-app/alloc",
+    description="Alloc xApp developed for PRB Allocation Use case",
+    url="",
     install_requires=["ricxappframe>=1.1.1,<2.4.0", "pandas>=1.1.3", "joblib>=0.3.2", "Scikit-learn>=0.21", "schedule>=0.0.0"],
     entry_points={"console_scripts": ["run-alloc.py=alloc.main:start"]},  # adds a magical entrypoint for Docker
 )
