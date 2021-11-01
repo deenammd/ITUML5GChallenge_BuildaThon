@@ -1,0 +1,31 @@
+{
+  "SubscriptionId": "",
+  "ClientEndpoint": {
+    "Host": "",
+    "HTTPPort": 65535,
+    "RMRPort": 4560
+  },
+  "Meid": "",
+  "RANFunctionID": 4095,
+  "SubscriptionDetails": [
+    {
+      "XappEventInstanceId": 3,
+      "EventTriggers": [
+        0
+      ],
+      "ActionToBeSetupList": [
+        {
+          "ActionID": 1,
+          "ActionType": "POLICY",
+          "ActionDefinition": [
+            0
+          ],
+          "SubsequentAction": {
+            "SubsequentActionType": "continue",
+            "TimeToWait": "zero"
+          }
+        }
+      ]
+    }
+  ]
+}
