@@ -3,7 +3,7 @@
 #  ITU-ML5G-PS-014: Build-a-thon(PoC) Network resource allocation
 #  for emergency management based on closed loop analysis
 #  Team : RAN-RIC-xApp
-#  Author : Deena Mukundan
+#  Authors : Deena Mukundan,Divyani
 #  Description : This file has the main implementation of predictor xApp
 # ==================================================================================
 
@@ -59,7 +59,6 @@ def get_gnb_list(self):
     """
     gnblist = self.get_list_gnb_ids()  # yet to come in library
     logger.debug("gnblist{}".format(gnblist))
-    #logger.debug("SubscriptionManager.getGnbList:: Processed request: {}".format(json.dumps(gnblist)))
     return gnblist
 
 
@@ -80,12 +79,6 @@ def send_subscription_request(xnb_id):
     f.close()
     payload = "'" + str(payload) + "'"
     logger.debug("req {}".format(payload))
-    #subscription_request = {"xnb_id": xnb_id, "action_type": Constants.ACTION_TYPE}
-    # try:
-    #     json_object = json.dumps(subscription_request,indent=4)
-    #     logger.debug("req {}".format(json_object))
-    # except TypeError:
-    #     logger.error("Unable to serialize the object")
     url = Constants.SUBSCRIPTION_PATH.format(Constants.PLT_NAMESPACE,
                                              Constants.SUBSCRIPTION_SERVICE,
                                              Constants.SUBSCRIPTION_PORT)
@@ -118,7 +111,7 @@ def send_subscription_requests_all(self):
 
 def verifySubscription(req: dict):
 
-    for i in ["subscription_id", "message"]:
+    for i in ["SubscriptionId", "SubscriptionInstances"]:
         if i not in req:
             return False
     return True
@@ -207,7 +200,7 @@ def entry(self):
          and is scheduled every 1 minute to send prediction request to Predict xApp
     """
     logger.debug("entry:::")
-    #send_subscription_requests_all(self) #TO DO later
+    send_subscription_requests_all(self) #TO DO later
     #check_rmr_messages(self)
     schedule.every(1).minute.do(send_pred_req_to_predxApp, self)
     while True:
