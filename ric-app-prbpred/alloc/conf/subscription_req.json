@@ -6,7 +6,7 @@
     "RMRPort": 4560
   },
   "Meid": "",
-  "RANFunctionID": 4095,
+  "RANFunctionID": 0,
   "SubscriptionDetails": [
     {
       "XappEventInstanceId": 3,
