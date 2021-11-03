@@ -3,7 +3,7 @@
 #  ITU-ML5G-PS-014: Build-a-thon(PoC) Network resource allocation
 #  for emergency management based on closed loop analysis
 #  Team : RAN-RIC-xApp
-#  Authors : Deena Mukundan,Divyani
+#  Authors : Deena Mukundan
 #  Description : This file has the main implementation of predictor xApp
 # ==================================================================================
 
@@ -70,6 +70,7 @@ def get_enb_list(self):
     logger.debug("SubscriptionManager.sdlGetGnbList:: Handler processed request: {}".format(json.dumps(enblist)))
     return enblist
 
+#Divyani
 def send_subscription_request(xnb_id):
     """  This function forms the json payload for each
          gnb's/enb's
