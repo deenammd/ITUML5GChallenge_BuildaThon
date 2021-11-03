@@ -16,7 +16,7 @@
       "ActionToBeSetupList": [
         {
           "ActionID": 1,
-          "ActionType": "POLICY",
+          "ActionType": "CONTROL",
           "ActionDefinition": [
             0
           ],
