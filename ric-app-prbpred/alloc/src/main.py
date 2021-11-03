@@ -4,7 +4,7 @@
 #  for emergency management based on closed loop analysis
 #  Team : RAN-RIC-xApp
 #  Authors : Deena Mukundan
-#  Description : This file has the main implementation of predictor xApp
+#  Description : This file has the main implementation of alloc xApp
 # ==================================================================================
 
 import os
