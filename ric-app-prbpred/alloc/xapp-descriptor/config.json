@@ -1,12 +1,12 @@
 {
-        "xapp_name": "prbpredxapp",
+        "xapp_name": "alloc",
         "version": "0.0.2",
         "containers": [
             {
-                "name": "prbpredxapp",
+                "name": "alloc",
                 "image": {
                     "registry": "nexus3.o-ran-sc.org:10002",
-                    "name": "o-ran-sc/ric-app-prbpred",
+                    "name": "o-ran-sc/ric-app-alloc",
                     "tag": "0.0.2"
                 }
             }
@@ -15,27 +15,24 @@
             "ports": [
                  {
                 "name": "http",
-                "container": "prbpredxapp",
-                "port": 10003,
+                "container": "alloc",
+                "port": 10005,
                 "description": "http service"
                 },
                 {
                     "name": "rmr-data",
-                    "container": "prbpredxapp",
+                    "container": "alloc",
                     "port": 4560,
-                    "rxMessages": [
-                        "A1_POLICY_REQ",
-                        "PRB_PRED_REQ"
-                    ],
-                    "txMessages": [ "A1_POLICY_RESP", "PRB_PRED_RSP","A1_POLICY_QUERY" ],
-                    "policies": [20008],
-                    "description": "rmr receive data port "
+                    "txMessages": ["PRB_PRED_REQ","RIC_HEALTH_CHECK_RESP"],
+                    "rxMessages": ["PRB_PRED_RSP", "SUBSCRIPTION_REQ","RIC_HEALTH_CHECK_REQ"],
+                    "policies": [],
+                    "description": "rmr receive data port for alloc"
                 },
                 {
                     "name": "rmr-route",
-                    "container": "prbpredxapp",
+                    "container": "alloc",
                     "port": 4561,
-                    "description": "rmr route port "
+                    "description": "rmr route port for alloc"
                 }
             ]
         },
@@ -43,15 +40,14 @@
             "protPort": "tcp:4560",
             "maxSize": 2072,
             "numWorkers": 1,
-            "txMessages": [
-                "PRB_PRED_RSP",
-                "A1_POLICY_RESP",
-                "A1_POLICY_QUERY"
-            ],
-            "rxMessages": [
-                "PRB_PRED_REQ",
-                "A1_POLICY_REQ"
-            ],
-            "policies": [20008]
+            "rxMessages": ["PRB_PRED_RESP"],
+            "txMessages": ["PRB_PRED_REQ"],
+            "policies": []
+        },
+        "controls": {
+            "fileStrorage": false
+         },
+        "db" : {
+            "waitForSdl": false
         }
-    }
+}
