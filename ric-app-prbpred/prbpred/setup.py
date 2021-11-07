@@ -13,7 +13,7 @@ setup(
     version="1.0.0",
     packages=find_packages(exclude=["tests.*", "tests"]),
     description="PRB Prediction Xapp",
-    url="https://repos/ric-app/prbpred",
+    url="",
     install_requires=["requests", "Flask","ricxappframe>=1.1.1,<2.0.0", "joblib>=0.3.2", "connexion[swagger-ui]","statsmodels>=0.11.1", "Scikit-learn>=0.21",  "schedule>=0.0.0", "mdclogpy<=1.1.1", "pandas"],
     entry_points={"console_scripts": ["run-prbpred.py=prbpred.main:start"]},  # adds a magical entrypoint for Docker
     package_data={"prbpred": ["openapi.yaml"]},
