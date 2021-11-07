@@ -15,7 +15,7 @@ COPY --from=nexus3.o-ran-sc.org:10002/o-ran-sc/bldr-alpine3-rmr:4.0.5 /usr/local
 # rmr_probe replaced health_ck
 COPY --from=nexus3.o-ran-sc.org:10002/o-ran-sc/bldr-alpine3-rmr:4.0.5 /usr/local/bin/rmr* /usr/local/bin/
 ENV LD_LIBRARY_PATH /usr/local/lib/:/usr/local/lib64
-COPY bootstrap.rt /opt/route/local.rt
+COPY local.rt /opt/route/local.rt
 ENV RMR_SEED_RT /opt/route/local.rt
 
 EXPOSE 10000
