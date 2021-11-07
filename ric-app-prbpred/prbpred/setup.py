@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="prbpred",
-    version="1.0.0",
+    version="0.0.2",
     packages=find_packages(exclude=["tests.*", "tests"]),
     description="PRB Prediction Xapp",
     url="",
