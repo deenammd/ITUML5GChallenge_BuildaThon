@@ -13,7 +13,7 @@ The pre-trained model and model specific implementation for PRB developed by Tea
 4) Create policy and policy Instances
 5) First deploy the prbpred xApp and then deploy alloc xAPP 
 
-  
+Code is developed as per references [8] and [9].
 
 1. A. Dandekar, J.Schulz-Zander, H.Wissing, Fraunhofer HHI, “Use case and requirements for orchestration of AI/ML basedclosed loops to enable autonomous networks”, Fraunhofer HHI, Apr., 2021.
 2.	[Build-a-thon FG AN] 	ITU-T FG AN-I-146 “Proposal for a “Build-a-thon” for ITU AI/ML in 5G Challenge (second edition, 2021), aligned with FGAN WG3” https://extranet.itu.int/sites/itu-t/focusgroups/an/input/FGAN-I-114-R1.docx  
